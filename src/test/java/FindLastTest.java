@@ -23,7 +23,8 @@ public class FindLastTest {
         pManager.save(movie5);
     }
 
-    @Test public void findLastMoreTest() {
+    @Test
+    public void findLastMoreTest() {
         Posters[] expected = {movie5, movie4, movie3, movie2, movie1};
         Posters[] actual = pManager.findLast();
 
