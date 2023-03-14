@@ -28,9 +28,9 @@ public class PostersManager {
 
     public Posters[] findAll() {
         Posters[] movies = getMovies();
-        {
-            return movies;
-        }
+
+        return movies;
+
     }
 
     public Posters[] findLast() {
@@ -41,10 +41,12 @@ public class PostersManager {
             resultLength = movies.length;
         }
 
+
         Posters[] result = new Posters[resultLength];
-        for (int i = resultLength - 1; i >= 0; i--) {
-            result[resultLength - 1 - i] = movies[i];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = movies[movies.length - 1 - i];
         }
         return result;
+
     }
 }

@@ -6,12 +6,13 @@ import org.junit.jupiter.api.Test;
 
 public class FindAllTest {
 
-    PostersManager pManager = new PostersManager(4);
+    PostersManager pManager = new PostersManager(3);
 
     Posters movie1 = new Posters("Джентельмены");
     Posters movie2 = new Posters("Вперед");
     Posters movie3 = new Posters("Бладшот");
     Posters movie4 = new Posters("Тролли");
+    Posters movie5 = new Posters("Номер один");
 
     @BeforeEach
     public void setup() {
@@ -19,18 +20,14 @@ public class FindAllTest {
         pManager.save(movie2);
         pManager.save(movie3);
         pManager.save(movie4);
+        pManager.save(movie5);
     }
 
     @Test
-    public void findLastLessTest() {
-
-
-        Posters[] expected = {movie4, movie3, movie2, movie1};
+    public void findAllLessTest() {
+        Posters[] expected = {movie5, movie4, movie3};
         Posters[] actual = pManager.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
-
     }
-
-
 }
